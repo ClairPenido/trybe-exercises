@@ -13,6 +13,7 @@
         height: 50px;
         text-align: center;
         width: 200px;
+        margin: auto 200px;
       }
 
       .second {
@@ -32,6 +33,12 @@
       }
       h3{ 
           text-align: center;
+      }
+      .position{
+        text-align: center;
+      }
+      .premiacao{
+        text-align: center;
       }
       .premio-primeiro li{
           display: inline-block;
