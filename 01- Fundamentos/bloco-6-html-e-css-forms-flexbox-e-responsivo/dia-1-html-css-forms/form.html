@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário TrybeTrip</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Formulário TrybeTrip </h1>
+    </header>
+    <form action="" method="get" class="form-trybetrip">
+        <div id="name-email">
+            <label for="full-name"> Nome completo: </label>
+            <input required type="text" id='full-name' name="full-name" min="10" max="40">
+
+            <label for="email"> E-mail </label>
+            <input required type="text" id='email' name="email" min="10" max="50">
+        </div>
+        <br>
+        <main id="main-content">
+            <label for='favorite-destiny'>Destino Preferido:</label>
+            <input type="checkbox" id="favorite-destiny" value="cidade"> Cidade
+            <input type="checkbox" id="favorite-destiny" value="cidade"> Campo
+            <input type="checkbox" id="favorite-destiny" value="cidade"> Praia
+            <input type="checkbox" id="favorite-destiny" value="cidade"> Montanhas
+            <br>
+            <div id="question">
+            <label for="answer">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label>
+            <br>
+            <textarea id="answer" placeholder="Escreva aqui" maxlength="500" cols="50" rows="8"></textarea>
+            <br>
+        </div>
+            <label for="date">Escolha a data:</label>
+            <input required type="date" id="date">
+            <br>
+            <input required type="radio">Concordo que imagens das minhas férias poderão ser usadas na divulgação de
+            concursos futuros.
+        </main>
+        <br>
+        <button id='button-submit' type="submit">Enviar</button>
+        <button id='button-clear'>Limpar</button>
+
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
