@@ -1,4 +1,5 @@
-const {sum,myRemove} = require('./sum');
+const { describe } = require('yargs');
+const {sum,myRemove, myFizzBuzz} = require('./sum');
 
 // Teste se o retorno de sum(4, 5) é 9
 test('Somatorio 4 + 5 é igual 9', () => {
@@ -32,3 +33,20 @@ test('Somatorio 4 + "5" é igual 9', () => {
  test('não retorna array esperado ([1, 2, 3, 4], 3)', () => {
     expect(myRemove([1, 2, 3, 4], 3)).not.toEqual([1, 2, 3, 4]);
   });
+
+  test('retorna array esperado ([1, 2, 3, 4], 5)', () => {
+    expect(myRemove([1, 2, 3, 4], 5)).toEqual(([1, 2, 3, 4]));
+  });
+
+  // Questão FizzBuzz
+  describe("Função Fizz Buzz", () => { 
+  // Faça uma chamada com um número divisível por 3 e 5 e verifique se o retorno é o esperado
+  it('mostra se o numero é divisivel por 3 (fizz) por 5(buzz) ou os dois (fizzbuzz)', () => {
+    expect(myFizzBuzz(15)).toBe('fizzbuzz');
+    expect(myFizzBuzz(3)).toBe('fizz');
+    expect(myFizzBuzz(5)).toBe('buzz');
+    expect(myFizzBuzz(1)).toBe(1);
+    expect(myFizzBuzz('1')).toBe(false);
+  });
+
+})
