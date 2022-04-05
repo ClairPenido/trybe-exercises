@@ -1,5 +1,4 @@
-const { describe } = require('yargs');
-const {sum,myRemove, myFizzBuzz} = require('./sum');
+const {sum,myRemove, myFizzBuzz, encode, decode} = require('./sum');
 
 // Teste se o retorno de sum(4, 5) é 9
 test('Somatorio 4 + 5 é igual 9', () => {
@@ -49,4 +48,22 @@ test('Somatorio 4 + "5" é igual 9', () => {
     expect(myFizzBuzz('1')).toBe(false);
   });
 
+})
+test('mostra se é funcão', () => {
+    expect(typeof encode).toBe('function');
+})
+test('mostra se é funcão', () => {
+    expect(typeof decode).toBe('function');
+})
+
+describe("Se é convertido", () => { 
+    // Faça uma chamada com um número divisível por 3 e 5 e verifique se o retorno é o esperado
+    it('convertido em letra para numero e numero para letra', () => {
+      expect(encode('aeiou')).toEqual('12345');
+      expect(decode('12345')).toEqual('aeiou');
+      expect(encode('fgh')).toEqual('fgh');
+      expect(decode('678')).toEqual('678');
+      expect(encode('aeiou')).toHaveLength(5);
+      expect(encode('12345')).toHaveLength(5);
+    });
 })
