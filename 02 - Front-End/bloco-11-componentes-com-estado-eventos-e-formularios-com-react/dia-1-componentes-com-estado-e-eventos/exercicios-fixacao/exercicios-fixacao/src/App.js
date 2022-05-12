@@ -33,12 +33,22 @@ buttonThree() {
     numeroDeCliques3: estadoAnterior.numeroDeCliques3 + 1
   }))
 }
+clickPar(num) {
+  return num % 2 === 0 ? 'green' : 'white';
+}
   render() {
+    const {numeroDeCliques1, numeroDeCliques2, numeroDeCliques3} = this.state;
     return (
     <div>
-    <button onClick={ this.buttonOne }>Botão 1 | Numero de cliques: {this.state.numeroDeCliques1}</button>
-    <button onClick={ this.buttonTwo }>Botão 2 | Numero de cliques: {this.state.numeroDeCliques2}</button>
-    <button onClick={ this.buttonThree }>Botão 3 | Numero de cliques: {this.state.numeroDeCliques3}</button>
+    {/* Para renderizarmos as cores, precisamos acrescentar a função
+    que contém a nossa lógica ao "inline style", passando o estado
+    correspondente como parâmetro */}
+    <button onClick={ this.buttonOne } style ={{backgroundColor: this.clickPar(numeroDeCliques1)}}>
+      Botão 1 | Numero de cliques: {numeroDeCliques1}</button>
+    <button onClick={ this.buttonTwo } style ={{backgroundColor: this.clickPar(numeroDeCliques2)}}>
+      Botão 2 | Numero de cliques: {numeroDeCliques2}</button>
+    <button onClick={ this.buttonThree } style ={{backgroundColor: this.clickPar(numeroDeCliques3)}}>
+      Botão 3 | Numero de cliques: {numeroDeCliques3}</button>
     </div>
   )};
 }
