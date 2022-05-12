@@ -1,22 +1,29 @@
 import React from 'react';
+import '.App.css';
 
-function buttonOne() {
+
+class App extends React.Component { // classe dos componentes 
+  constructor(){
+    super();
+    this.buttonOne = this.buttonOne.bind(this); // para ter acesso as props
+    this.buttonTwo = this.buttonTwo.bind(this);
+    this.buttonThree = this.buttonThree.bind(this);
+  }
+buttonOne() {
   console.log('Clicou no botão um!');
 }
-function buttonTwo() {
+buttonTwo() {
   console.log('Clicou no botão dois!');
 }
-function buttonThree() {
+buttonThree() {
   console.log('Clicou no botão três!');
 }
-
-class App extends React.Component {
   render() {
     return (
     <div>
-    <button onClick={ buttonOne }>Botão</button>
-    <button onClick={ buttonTwo }>Botão</button>
-    <button onClick={ buttonThree }>Botão</button>
+    <button onClick={ this.buttonOne }>Botão 1</button>
+    <button onClick={ this.buttonTwo }>Botão 2</button>
+    <button onClick={ this.buttonThree }>Botão 3</button>
     </div>
   )};
 }
